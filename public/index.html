@@ -21,14 +21,55 @@
       </div>
       <nav>
         <ul>
-          <li>Buy</li>
-          <li>Sell</li>
-          <li>Login</li>
-          <li>Create Account</li>
-          <li>FAQ</li>
-          <li>About</li>
+          <li><a href="./buy.html">Buy</a></li>
+          <li><a href="./sell.html">Sell</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <li><a href="./account.html">Create Account</a></li>
+          
         </ul>
       </nav>
+      <div class="mobileNav">
+        <ul>
+          <li>
+            <a href="./buy.html">Buy</a>
+          </li>
+          <li>
+            <a href="./sell.html">Sell</a>
+          </li>
+          <li>
+            <a href="./mobileaccount.html">Account</a>
+          </li>
+
+          <li id="btnMobileNavMore">
+            More
+          </li>
+        </ul>       
+      </div>
+
+      <div class="mobileNavMore" id="mobileNavMore">
+          <ul>
+              <li>
+                <a href="./buy.html">Buy</a>
+              </li>
+              <li>
+                <a href="./sell.html">Sell</a>
+              </li>
+              <li>
+                <a href="./mobileaccount.html">Account</a>
+              </li>
+              <li>
+                <a href="./communities.html">Communities</a>
+              </li>
+              <li>
+                <a href="./living.html">Living Space</a>
+              </li>
+              <li>
+                <a href="./job.html">Jobs</a>
+              </li>
+              
+            </ul> 
+            <span id="btnMobileNavMoreBack">(CLOSE)</span>   
+      </div>
     </header>
     <!-- end of header -->
     
@@ -51,7 +92,7 @@
     <div class="showCase">
       
       <!-- tempalte for items for sale -->
-      <div class="forSalePanel">
+      <div class="forSalePanel flexHome">
         <div class="forSalePanelImg">
           <img src="./img/sell/phone.jpeg" alt="Samsung Tralaxy">
         </div>
@@ -61,7 +102,7 @@
         </div>  
       </div>
       
-      <div class="forSalePanel">
+      <div class="forSalePanel flexHome">
         <div class="forSalePanelImg">
           <img src="./img/sell/house.jpeg" alt="Samsung Tralaxy">
         </div>
@@ -70,25 +111,25 @@
           <p>Beautiful backyard pool. You won't believe the view! Only 3 people have died in this house so there may or may not be ghosts. It depends on whether or not you consider a gate to hell (located in the amazing wine cellar!) a deal breaker.</p>
         </div>  
       </div>
-
-      <div class="forSalePanel">
-          <div class="forSalePanelImg">
-            <img src="./img/sell/watch.jpeg" alt="Samsung Tralaxy">
-          </div>
-          <div class="forSalePanelText">
-            <h3>Snapple Watch</h3>
-            <p>The original Snapple Watch! This is the limted edition released only in Smexico! Signed by Steve Urkel himself!</p>
-          </div>  
+      
+      <div class="forSalePanel flexHome">
+        <div class="forSalePanelImg">
+          <img src="./img/sell/watch.jpeg" alt="Samsung Tralaxy">
+        </div>
+        <div class="forSalePanelText">
+          <h3>Snapple Watch</h3>
+          <p>The original Snapple Watch! This is the limted edition released only in Smexico! Signed by Steve Urkel himself!</p>
+        </div>  
       </div>
-
-      <div class="forSalePanel">
-          <div class="forSalePanelImg">
-            <img src="./img/sell/laptop.jpeg" alt="Samsung Tralaxy">
-          </div>
-          <div class="forSalePanelText">
-            <h3>SnapBook Chair</h3>
-            <p>Perfect condition. I thought it would match the holes in my jeans but it turns out I don't even know how to use a computer. I consider it a personal achievement that I was able to create this ad. Thankfully this new craigslist is so user intuitive.</p>
-          </div>  
+      
+      <div class="forSalePanel flexHome">
+        <div class="forSalePanelImg">
+          <img src="./img/sell/laptop.jpeg" alt="Samsung Tralaxy">
+        </div>
+        <div class="forSalePanelText">
+          <h3>SnapBook Chair</h3>
+          <p>Perfect condition. I thought it would match the holes in my jeans but it turns out I don't even know how to use a computer. I consider it a personal achievement that I was able to create this ad. Thankfully this new craigslist is so user intuitive.</p>
+        </div>  
       </div>
       
     </div> <!-- end of showcase -->
@@ -96,15 +137,15 @@
     <!-- END OF SHOWCASE -->
     <section class="threePanel">
       <div>
-        <h2>Buy</h2>
+        <h2><a href="./buy.html">Buy</a></h2>
         <p>We guarantee there's more than rocks in that iPad box.</p>
       </div>
       <div>
-        <h2>Sell</h2>
+        <h2><a href="./sell.html">Sell</a></h2>
         <p>Sell it fast. Sell it easy. Sell it at the local grocery store parking lot.</p>
       </div>
       <div>
-        <h2>Find A Job</h2>
+        <h2><a href="./job.html">Find A Job</a></h2>
         <p>Need more money to buy things on craigslist? Look no further.</p>
       </div>
       
@@ -124,17 +165,15 @@
       </div>
       
     </section>
-
+    
     <footer>
       <div class="footerSiteMap">
         <span>Site Map</span>
         <ul>
-          <li>Buy</li>
-          <li>Sell</li>
-          <li>Login</li>
-          <li>Create Account</li>
-          <li>FAQ</li>
-          <li>About</li>
+          <li><a href="./buy.html">Buy</a></li>
+          <li><a href="./sell.html">Sell</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <li><a href="./account.html">Create Account</a></li>          
         </ul>
       </div>
       <div class="footerNameSpace">
@@ -157,6 +196,7 @@
   <script>
     document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
     ':35729/livereload.js?snipver=1"></' + 'script>')
-  </script> 
+  </script>
+  <script src="./scripts/script.js"></script>
 </body>
 </html>

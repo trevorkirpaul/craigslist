@@ -8,7 +8,10 @@ $red: #C14953
 $font: 'Roboto', sans-serif
 
 @mixin mobile
-  @media only screen and (max-width: 700px)
+  @media only screen and (max-width: 800px)
+    @content
+@mixin mid
+  @media only screen and (max-width: 1200px)
     @content
 
 *
@@ -22,23 +25,34 @@ body
   color: $black
   padding: 15px
   font-family: $font
+  @include mobile
+    padding: 0
 
 .container
   max-width: 1400px
   margin: 0 auto
   header
+    position: relative
     background-color: $black
     color: $white
     margin: 10px
     padding: 25px
     display: flex
     margin-bottom: 15px
-    
-
+    @include mobile
+      flex-direction: column
+      flex-flow: row wrap    
     .logo
       flex: 1
       font-size: 1.5em
       font-weight: 600
+      a
+        color: $white
+        text-decoration: none
+      @include mobile
+        text-align: left
+        margin-bottom: 20px
+        flex-basis: 50%
       &::before
         content: '+'
         font-weight: 700
@@ -46,8 +60,13 @@ body
     .location
       flex: 1
       text-align: center
+      @include mobile
+        text-align: right
+        margin-bottom: 10px
+        flex-basis: 50%
       select
-        width: 50%
+        width: 70%
+        margin-top: 1px
         height: 25px
         border: 1px solid $white
         background-color: $black
@@ -55,14 +74,72 @@ body
     nav
       flex: 1
       text-align: right
+      @include mobile
+        display: none
       ul
         list-style: none
         margin-top: 2.0px
+       
         li
           display: inline-block
           color: $white
           font-weight: 300
           margin-left: 5px
+          a
+            color: $white
+            text-decoration: none
+            padding: 5px
+            transition: 0.3s
+            &:hover
+              color: $blue
+
+    //mobile only menu
+    .mobileNav
+      display: none
+      flex: 1
+      flex-basis: 100%
+      text-align: center
+      @include mobile
+        display: block   
+      ul
+        list-style: none
+        display: flex
+        li
+          flex: 1
+          display: inline-block
+          margin: 0 2px
+          padding: 5px 10px
+          background-color: $blue
+          a
+            text-decoration: none
+            color: $white
+      
+    //mobile More Options
+    .mobileNavMore
+      display: none
+      position: absolute
+      background-color: $black
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      text-align: center
+      ul
+        list-style: none
+        display: flex
+        flex-flow: row wrap
+        margin: 5px 0
+        li
+          flex-basis: 50%
+          text-align: center
+          padding: 5px 0
+          a
+            color: $white
+            text-decoration: none
+      span
+        cursor: pointer
+          
+
   // END HEADER
 
   .heroPanel
@@ -80,10 +157,15 @@ body
       font-weight: 300
       color: $white
       margin-bottom: 25px
+      a
+        color: $white
+        
   //END HERO PANEL
 
   .threePanel
     display: flex
+    @include mobile
+      flex-direction: column
     div
       flex: 1
       padding: 25px
@@ -95,6 +177,9 @@ body
         background-color: $black
         padding: 5px
         margin-bottom: 25px
+        a
+          text-decoration: none
+          color: $white
       p
         font-weight: 400
         line-height: 25px
@@ -103,6 +188,8 @@ body
 
   .twoPanel
     display: flex
+    @include mobile 
+      flex-direction: column
     div
       flex: 1
       background-color: $red
@@ -115,6 +202,9 @@ body
         background-color: $black
         padding: 5px
         margin-bottom: 25px
+        a
+          text-decoration: none
+          color: $white
       p
         font-weight: 300
         line-height: 25px
@@ -129,6 +219,10 @@ body
     color: $white
     margin: 10px
     padding: 25px
+    @include mobile
+      flex-direction: column
+      flex-flow: column-reverse
+      text-align: center
     .footerSiteMap
       flex: 1
       span
@@ -142,8 +236,16 @@ body
         li
           font-weight: 300
           padding: 5px
+          @include mobile
+            display: inline-block
+          a
+            color: $white
+            text-decoration: none
+
     .footerNameSpace
       text-align: right
+      @include mobile
+        margin-bottom: 25px
       h1
         margin-bottom: 10px
         &::before
@@ -157,20 +259,57 @@ body
 .showCase
   display: flex
   flex-direction: row
+  flex-flow: row wrap
   @include mobile
     flex-direction: column
   
   .forSalePanel
-    flex: 1
+    flex: 1 30%
+    @include mid
+      flex-basis: 40%
+    @include mobile
+      flex-basis: 100%
+
     // max-width: 250px
     margin: 10px
     background-color: $black
-    
-      
+
+    //styling for tags/pills quick identifers in for sale panel
+    .forSalePanelTags
+      padding: 5px
+      .pill
+        display: inline-block
+        border: 1px solid $white
+        border-radius: 10px 
+        background-color: $white
+        padding: 2px 5px
+        font-weight: 400
+      .pillTech
+        background-color: skyblue
+        border-color: skyblue 
+      .pillLiving
+        background-color: lightgreen
+        border-color: lightgreen 
+      .pillJewlery
+        background-color: gold
+        border-color: gold
+      .pillTransportation
+        background-color: coral
+        border-color: coral
+      .pillCar
+        background-color: pink
+        border-color: pink 
+      .pillVG
+        background-color: darkred
+        border-color: darkred
+        color: $white
+      .pillFurniture
+        background-color: AntiqueWhite
+        border-color: Antique-White
         
     .forSalePanelImg
       img
-        max-width: 100%
+        width: 100%
         margin-bottom: 5px
     .forSalePanelText
       // background-color: $white
@@ -182,4 +321,10 @@ body
       p
         font-weight: 300
         line-height: 25px
+  .flexMed
+    flex-basis: 40%
+  .flexHome
+    flex-basis: 20%
+    @include mid
+      flex-basis: 40%
     
