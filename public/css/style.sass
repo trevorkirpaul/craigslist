@@ -11,7 +11,7 @@ $font: 'Roboto', sans-serif
   @media only screen and (max-width: 800px)
     @content
 @mixin mid
-  @media only screen and (max-width: 1200px)
+  @media only screen and (min-width: 800px) and (max-width: 1200px)
     @content
 
 *
@@ -166,6 +166,7 @@ body
     display: flex
     @include mobile
       flex-direction: column
+    
     div
       flex: 1
       padding: 25px
@@ -254,7 +255,7 @@ body
 
 
 
-// Panel for item for sale
+// Panel for items for sale
 
 .showCase
   display: flex
@@ -327,4 +328,102 @@ body
     flex-basis: 20%
     @include mid
       flex-basis: 40%
+
+// PANEL FOR YOU TO SELL ITEM
+  
+.sellPanel
+  background-color: $red
+  margin: 10px
+  padding: 25px
+  display: flex
+  @include mobile
+    flex-direction: column
+  @include mid
+    flex-direction: column
+ 
+  .sellPanelTips
+    flex: 1
+    @include mobile
+      display: none
+    @include mid
+      margin-bottom: 25px
+      max-width: 500px
+    h2
+      margin-bottom: 25px
+      font-size: 2em
+    p
+      line-height: 30px
+      font-weight: 300
+      color: $white
     
+
+  .sellPanelForm 
+    flex: 2
+    text-align: right
+    padding-top: 10px
+    @include mid
+      margin-left: auto
+      margin-right: auto
+
+    
+    #inpTitle
+      display: inline-block
+      width: 500px
+      height: 30px
+      padding: 5px
+      margin-bottom: 15px
+
+      border: 1px solid $white
+      background-color: $red
+      color: $white
+      @include mobile
+        width: 100%
+   
+    
+    #txtBody
+      display: inline-block
+      width: 500px
+      padding: 5px
+      resize: none
+      border: 1px solid $white
+      color: $white
+      background-color: $red
+      margin-bottom: 15px
+
+      font-family: $font  
+      @include mobile
+        width: 100% 
+      
+    #outputImgUrl
+      display: inline-block
+      width: 500px
+      height: 30px
+      padding: 5px
+      margin-bottom: 15px
+
+      border: 1px solid $white
+      background-color: $red
+      color: $white
+      text-align: center
+      @include mobile
+        width: 100%
+
+    .formButtons      
+     
+      button
+        display: inline-block
+        width: 500px
+        height: 25px
+        margin-bottom: 5px
+        border: 1px solid $black
+        background-color: $black
+        color: $white
+        cursor: pointer
+        transition: 0.3s 
+        &:hover
+          background-color: $white
+          border-color: $white
+          color: $black
+        @include mobile
+          width: 100%
+     

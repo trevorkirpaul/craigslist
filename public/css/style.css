@@ -239,7 +239,7 @@ body {
     flex: 1 30%;
     margin: 10px;
     background-color: #303030; }
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (min-width: 800px) and (max-width: 1200px) {
       .showCase .forSalePanel {
         flex-basis: 40%; } }
     @media only screen and (max-width: 800px) {
@@ -292,8 +292,99 @@ body {
     flex-basis: 40%; }
   .showCase .flexHome {
     flex-basis: 20%; }
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (min-width: 800px) and (max-width: 1200px) {
       .showCase .flexHome {
         flex-basis: 40%; } }
+
+.sellPanel {
+  background-color: #C14953;
+  margin: 10px;
+  padding: 25px;
+  display: flex; }
+  @media only screen and (max-width: 800px) {
+    .sellPanel {
+      flex-direction: column; } }
+  @media only screen and (min-width: 800px) and (max-width: 1200px) {
+    .sellPanel {
+      flex-direction: column; } }
+  .sellPanel .sellPanelTips {
+    flex: 1; }
+    @media only screen and (max-width: 800px) {
+      .sellPanel .sellPanelTips {
+        display: none; } }
+    @media only screen and (min-width: 800px) and (max-width: 1200px) {
+      .sellPanel .sellPanelTips {
+        margin-bottom: 25px;
+        max-width: 500px; } }
+    .sellPanel .sellPanelTips h2 {
+      margin-bottom: 25px;
+      font-size: 2em; }
+    .sellPanel .sellPanelTips p {
+      line-height: 30px;
+      font-weight: 300;
+      color: #F5F5F5; }
+  .sellPanel .sellPanelForm {
+    flex: 2;
+    text-align: right;
+    padding-top: 10px; }
+    @media only screen and (min-width: 800px) and (max-width: 1200px) {
+      .sellPanel .sellPanelForm {
+        margin-left: auto;
+        margin-right: auto; } }
+    .sellPanel .sellPanelForm #inpTitle {
+      display: inline-block;
+      width: 500px;
+      height: 30px;
+      padding: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #F5F5F5;
+      background-color: #C14953;
+      color: #F5F5F5; }
+      @media only screen and (max-width: 800px) {
+        .sellPanel .sellPanelForm #inpTitle {
+          width: 100%; } }
+    .sellPanel .sellPanelForm #txtBody {
+      display: inline-block;
+      width: 500px;
+      padding: 5px;
+      resize: none;
+      border: 1px solid #F5F5F5;
+      color: #F5F5F5;
+      background-color: #C14953;
+      margin-bottom: 15px;
+      font-family: "Roboto", sans-serif; }
+      @media only screen and (max-width: 800px) {
+        .sellPanel .sellPanelForm #txtBody {
+          width: 100%; } }
+    .sellPanel .sellPanelForm #outputImgUrl {
+      display: inline-block;
+      width: 500px;
+      height: 30px;
+      padding: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #F5F5F5;
+      background-color: #C14953;
+      color: #F5F5F5;
+      text-align: center; }
+      @media only screen and (max-width: 800px) {
+        .sellPanel .sellPanelForm #outputImgUrl {
+          width: 100%; } }
+    .sellPanel .sellPanelForm .formButtons button {
+      display: inline-block;
+      width: 500px;
+      height: 25px;
+      margin-bottom: 5px;
+      border: 1px solid #303030;
+      background-color: #303030;
+      color: #F5F5F5;
+      cursor: pointer;
+      transition: 0.3s; }
+      .sellPanel .sellPanelForm .formButtons button:hover {
+        background-color: #F5F5F5;
+        border-color: #F5F5F5;
+        color: #303030; }
+      @media only screen and (max-width: 800px) {
+        .sellPanel .sellPanelForm .formButtons button {
+          width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */
